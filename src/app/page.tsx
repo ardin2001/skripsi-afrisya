@@ -7,17 +7,7 @@ import { GrServices } from "react-icons/gr";
 import CardMarket from "./components/CardMarket";
 import Link from "next/link";
 
-async function fetchData() {
-  // default : cache : 'force-cache'
-  const response = await fetch(`${process.env.HOSTNAME_P1}/api/products`, {
-    cache: 'no-store'
-  })
-  const { status, data } = await response.json()
-  return { status, data }
-}
-
 export default async function Home() {
-  const { status, data } = await fetchData()
   return (
     <main className="bg-low">
       <Navbar />
